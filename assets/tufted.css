@@ -14,7 +14,7 @@ BASE STYLES
 *******************************************************************************/
 
 html {
-    font-size: 1em;
+    font-size: 10pt;
 }
 
 img,
@@ -61,7 +61,7 @@ NAVBAR
 
 header nav {
     display: flex;
-    gap: 5em;
+    gap: 1em;
 }
 
 header nav a,

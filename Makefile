@@ -5,7 +5,7 @@ TYP_FILES := $(shell find content -name '*.typ' -not -path '*/_*')
 HTML_FILES := $(patsubst content/%.typ,_site/%.html,$(TYP_FILES))
 
 # The main target 'html' depends on all generated HTML files and assets
-html: $(HTML_FILES) assets
+html: $(HTML_FILES) Academic-Homepage-Typst-Tufted/assets
 
 # Pattern rule to compile .typ files to .html files
 # $< is the first prerequisite (the .typ file)
