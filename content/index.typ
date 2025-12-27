@@ -53,16 +53,13 @@ Hi there!
 // }
 
 == 📝 Publications
-#let icons = [
-  #arxiv,
-  #arxiv,
-  #arxiv
-]
+
+
 #{
   let bib = load-bibliography(read("assets/papers.bib"))
   for item in bib.values().rev() [
     #let data = item.fields
-    - #item2(icons[#data.idx], data.title, data.author, data.year, data.url)
+    - #item2(data.archivePrefix, data.title, data.author, data.year, data.url)
   ]
 }
 
