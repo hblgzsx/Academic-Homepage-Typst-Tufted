@@ -621,7 +621,7 @@
     columns: 5,
     gutter: 0.1em,
     stroke: none,
-    [#logo], [#title], [#author], [#year], [#url],
+    [#image("assets/" + logo + ".svg", width: 1em)], [#title], [#author], [#year], [#url],
   )
 }
 
