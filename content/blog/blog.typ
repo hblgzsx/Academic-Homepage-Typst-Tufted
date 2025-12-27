@@ -11,21 +11,21 @@
 ) = {
   show: it => {
     // Generate metadata for Astro content collections
-    [
-      #metadata((
-        title: title,
-        author: author,
-        description: desc,
-        date: date,
-        tags: tags,
-      )) <frontmatter>
-    ]
+    // [
+    //   #metadata((
+    //     title: title,
+    //     author: author,
+    //     description: desc,
+    //     date: date,
+    //     tags: tags,
+    //   )) <frontmatter>
+    // ]
 
-    // set basic document metadata
-    set document(
-      author: author,
-      title: title,
-    )
+    // // set basic document metadata
+    // set document(
+    //   author: author,
+    //   title: title,
+    // )
 
 
     // math rules
