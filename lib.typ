@@ -66,10 +66,10 @@
   zh_fangsong: "STFangsong",
   // 英文字体
   en_sans_serif: "New Computer Modern",
-  en_serif: "New Computer Modern",
+  // en_serif: "New Computer Modern",
   math_serif: "Libertinus Serif",
   // en_serif: "Times New Roman",
-  // en_serif:"Comic Sans MS",
+  en_serif: "Comic Sans MS",
   en_typewriter: "Courier New",
   en_code: "Consolas",
 )

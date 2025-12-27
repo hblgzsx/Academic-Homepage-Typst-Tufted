@@ -6,15 +6,23 @@
 
 
 
-= Edward R. Tufte
+= 周树勋（Shuxun Zhou/Cyrus.zhou）
 
 #tufted.margin-note[
+  #image("assets/profile-photo.png")
+]
+#tufted.margin-note[
+  #image("assets/arxiv.svg")
+]
+#tufted.margin-note[
   Statistician, Artist, and Professor Emeritus \
-  Website: #link("https://www.edwardtufte.com")[edwardtufte.com] \
-  Email: #link("mailto:noreply@edwardtufte.com")[`noreply@edwardtufte.com`]
+  Website: #link("https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/")[https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/] \
+  Email: #link("mailto:cyrus.zhou@mail.hfut.edu.cn")[`cyrus.zhou@mail.hfut.edu.cn`]
 ]
 
-Research in statistical evidence and analytical design for information visualization, integrating principles from statistics, graphic design, and cognitive science for the effective presentation of quantitative data.
+Hi there!
+
+我是一名专门研究计算机视觉和气象大模型的硕士生。我在华北理工大学完成了学士学位，现就读于合肥工业大学攻读硕士学位。您可以通过cyrus.zhou\@mail.hfut.edu.cn与我联系。
 
 
 // == Experience
@@ -22,17 +30,15 @@ Research in statistical evidence and analytical design for information visualiza
 // - *1977--1999*: Professor Emeritus, Yale University. Departments of Political Science, Statistics, and Computer Science.
 // - *1967--1977*: Instructor, Princeton University. Woodrow Wilson School of Public and International Affairs.
 
-== Artworks
+// == Artworks
 
-#tufted.margin-note[
-  #image("assets/escaping-flatland.webp")
-]
 
-#tufted.margin-note[
-  A homage to Edward R. Tufte's large stainless steel sculpture titled _Escaping Flatland_
-]
 
-Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut. Creator of large-scale works including _Larkin’s Twig_ and the _Escaping Flatland_ series, exhibited at the Aldrich Contemporary Art Museum.
+// #tufted.margin-note[
+//   A homage to Edward R. Tufte's large stainless steel sculpture titled _Escaping Flatland_
+// ]
+
+// Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut. Creator of large-scale works including _Larkin’s Twig_ and the _Escaping Flatland_ series, exhibited at the Aldrich Contemporary Art Museum.
 
 // == Research Contributions
 // Development of sparklines, a method for embedding high-resolution data graphics within text, and formulation of the data-ink ratio as a quantitative measure of graphical efficiency.
@@ -46,7 +52,7 @@ Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut
 //   ]
 // }
 
-== Papers
+== 📝 Publications
 #{
   let bib = load-bibliography(read("assets/papers.bib"))
   for item in bib.values().rev() [

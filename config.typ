@@ -1,4 +1,5 @@
 #import "@preview/tufted:0.1.0"
+#import "/lib.typ": *
 
 #let template = tufted.tufted-web.with(
   header-links: (
@@ -13,4 +14,11 @@
     "/Academic-Homepage-Typst-Tufted/assets/custom.css",
   ),
   title: "周树勋",
+)
+
+#set text(
+  font: config.body-font,
+  lang: "zh",
+  region: "cn",
+  size: config.text-size,
 )
