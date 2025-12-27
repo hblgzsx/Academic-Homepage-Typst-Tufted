@@ -7,18 +7,10 @@
   show-outline: true,
 ) = [
   #title
-
-
   #footnote[
     #text(fill: gray, size: 0.8em)[#sub-title] \
-    #table(
-      stroke: none,
-      columns: 2,
-      author, date,
-    )
-    if #show-outline {
-    outline(title: "", indent: auto)
-    }
+    #author, #date, \
+    if show-outline { outline(title: "", indent: auto)}
   ]
 
 ]
