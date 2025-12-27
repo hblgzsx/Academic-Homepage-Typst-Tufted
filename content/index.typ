@@ -4,7 +4,7 @@
 
 
 
-#include "home/index.typ"
+// #include "home/index.typ"
 // = Tufted
 
 // #tufted.margin-note({
