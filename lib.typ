@@ -603,4 +603,9 @@
 )
 
 
+#let profile-photo(path) = html.img(
+  class: "profile-photo",
+  image(path, width: 30%),
+)
+
 

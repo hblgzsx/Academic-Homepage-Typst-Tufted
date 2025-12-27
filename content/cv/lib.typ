@@ -6,17 +6,10 @@
 )
 
 // 图标
-#let icon(path, fill: rgb("#000000")) = box(
-  // baseline: 0.125em,
-  width: 2em,
-  image(path),
-)
+#let icon(path, fill: rgb("#000000")) = image(path, width: 1em)
 
-#let icon-init(path) = box(
-  // baseline: 0.125em,
-  width: 2em,
-  image(path),
-)
+#let icon-init(path) = image(path, width: 1em)
+
 
 #let fa-angle-right = icon("icons/fa-angle-right.svg")
 
@@ -191,10 +184,10 @@
 ) = {
   v(0.25em)
   table(
-    columns: (60%, 2fr, auto),
+    columns: (40%, 2fr, 2fr),
     gutter: 3em,
     stroke: none,
-    align: center + horizon,
+    align: (left + horizon, center + horizon, right + horizon),
     title, desc, endnote,
   )
 }
