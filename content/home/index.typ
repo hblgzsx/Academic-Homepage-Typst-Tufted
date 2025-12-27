@@ -47,7 +47,7 @@ Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut
   let bib = load-bibliography(read("papers.bib"))
   for item in bib.values().rev() [
     #let data = item.fields
-    - #data.author, "#data.title," #emph(data.journal), #data.year. DOI: #link(data.url)[#data.doi]
+    - #data.author, "#data.title," #emph(data.archivePrefix), #data.year. DOI: #link(data.url)[#data.doi]
   ]
 }
 
