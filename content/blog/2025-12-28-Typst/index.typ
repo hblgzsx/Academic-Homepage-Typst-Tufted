@@ -11,6 +11,9 @@
   show-outline: true,
 )
 
+= 一份(不太)简短的Typst介绍
+
+Typst官方文档中文翻译版，总共有206页。
 #let total-pages = 206
 
 #for i in range(1, total-pages + 1) {

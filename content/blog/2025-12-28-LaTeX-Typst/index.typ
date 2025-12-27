@@ -12,9 +12,9 @@
 )
 
 
-// = Equivalent Typst Function Names of LaTeX Commands
+= Equivalent Typst Function Names of LaTeX Commands
 
-// 从 LaTeX 命令到 Typst 函数的等价名称
+从 LaTeX 命令到 Typst 函数的等价名称
 
 #let total-pages = 5
 
