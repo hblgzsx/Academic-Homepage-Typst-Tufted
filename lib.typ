@@ -617,12 +617,11 @@
   year,
   url,
 ) = {
-  let logo-path = logo.lower()
   table(
     columns: 5,
     gutter: 0.1em,
     stroke: none,
-    image("assets/" + logo-path + ".svg", width: 1em), title, author, year, url,
+    logo, title, author, year, url,
   )
 }
 
