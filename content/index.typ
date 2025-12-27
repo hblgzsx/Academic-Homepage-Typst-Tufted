@@ -54,9 +54,9 @@ Hi there!
 
 == 📝 Publications
 #let logo = (
-  "arxiv",
-  "arxiv",
-  "arxiv",
+  arxiv,
+  arxiv,
+  arxiv,
 )
 
 #{
