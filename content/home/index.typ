@@ -1,6 +1,10 @@
 #import "../index.typ": template, tufted
+#import "../../utils.typ": *
+#import "../cv/lib.typ": *
 #show: template
 #import "@preview/citegeist:0.2.0": load-bibliography
+
+
 
 = Edward R. Tufte
 
@@ -47,7 +51,7 @@ Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut
   let bib = load-bibliography(read("papers.bib"))
   for item in bib.values().rev() [
     #let data = item.fields
-    - #data.author, "#data.title," #emph(data.archivePrefix), #data.year. DOI: #link(data.url)[#data.doi]
+    - #arxiv #data.author, "#data.title,", #data.year. DOI: #link(data.url)[#data.doi]
   ]
 }
 
