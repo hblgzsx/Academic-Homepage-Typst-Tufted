@@ -62,16 +62,11 @@ Hi there!
 }
 
 == #fa-graduation-cap Educational Background
-#sidebar(with-line: true, side-width: 24%)[
-  2025.09-2028.06
-][
-  *合肥工业大学* · *计算机科学与技术* //计算机科学与技术
-]
-#sidebar(with-line: true, side-width: 24%)[
-  2021.09-2025.06
-][
-  *华北理工大学* · *智能科学与技术* //智能科学与技术
-]
+
+2025.09-2028.06 *合肥工业大学* · *计算机科学与技术* //计算机科学与技术
+
+2021.09-2025.06 *华北理工大学* · *智能科学与技术* //智能科学与技术
+
 
 
 == #fa-award Honor and Awards

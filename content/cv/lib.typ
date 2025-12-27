@@ -8,22 +8,14 @@
 // 图标
 #let icon(path, fill: rgb("#000000")) = box(
   // baseline: 0.125em,
-  height: 0.7em,
-  width: 1.25em,
-  align(
-    center + horizon,
-    image(path, height: 1em),
-  ),
+  width: 2em,
+  image(path),
 )
 
 #let icon-init(path) = box(
   // baseline: 0.125em,
-  height: 0.7em,
-  width: 1.25em,
-  align(
-    center + horizon,
-    image(path, height: 1em),
-  ),
+  width: 2em,
+  image(path),
 )
 
 #let fa-angle-right = icon("icons/fa-angle-right.svg")
@@ -198,9 +190,10 @@
   endnote,
 ) = {
   v(0.25em)
-  grid(
+  table(
     columns: (60%, 2fr, auto),
     gutter: 3em,
+    stroke: none,
     align: center + horizon,
     title, desc, endnote,
   )
@@ -238,5 +231,6 @@
 #let typst = icon("icons/linux-typst.svg")
 
 #let arxiv = icon("icons/arxiv.svg")
+
 
 
