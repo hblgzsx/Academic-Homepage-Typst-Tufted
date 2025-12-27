@@ -606,7 +606,7 @@
 #let profile-photo(path) = html.img(
   class: "profile-photo",
   src: path,
-  style: "width: 10%;height:auto;",
+  style: "width: 40%;height:auto;",
 )
 
 
