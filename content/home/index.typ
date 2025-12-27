@@ -1,4 +1,4 @@
-#import "../index.typ": template, tufted
+#import "../../config.typ": template, tufted
 #import "../../utils.typ": *
 #import "../cv/lib.typ": *
 #show: template
