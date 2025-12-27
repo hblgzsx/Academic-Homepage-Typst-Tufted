@@ -138,58 +138,6 @@
 
 
 
-// 图标
-#let icon(path, fill: rgb("#000000")) = box(
-  // baseline: 0.125em,
-  height: 0.7em,
-  width: 1.25em,
-  align(
-    center + horizon,
-    image(bytes(read(path).replace("path d", "path fill=\"" + fill.to-hex() + "\" d")), height: 1em),
-  ),
-)
-
-#let icon_color(path, fill: rgb("#000000")) = box(
-  // baseline: 0.125em,
-  height: 0.7em,
-  width: 1.25em,
-  align(
-    center + horizon,
-    image(bytes(read(path)), height: 1em),
-  ),
-)
-
-#let theme-color = rgb("#26267d")
-#let icon = icon.with(fill: theme-color)
-// 设置图标, 来源: https://fontawesome.com/icons/
-#let fa-award = icon("icons/fa-award.svg")
-#let fa-building-columns = icon("icons/fa-building-columns.svg")
-#let fa-code = icon("icons/fa-code.svg")
-#let fa-envelope = icon("icons/fa-envelope.svg")
-#let fa-github = icon("icons/fa-github.svg")
-#let fa-graduation-cap = icon("icons/fa-graduation-cap.svg")
-#let fa-linux = icon("icons/fa-linux.svg")
-#let fa-phone = icon("icons/fa-phone.svg")
-#let fa-windows = icon("icons/fa-windows.svg")
-#let fa-wrench = icon("icons/fa-wrench.svg")
-#let fa-work = icon("icons/fa-work.svg")
-#let iconfont-objective = icon("icons/iconfont-Objective.svg")
-#let iconfont-iflytek = icon("icons/spark.svg")
-#let iconfont-huawei = icon("icons/iconfont-huawei.svg")
-
-#let java = icon("icons/java.svg")
-#let python = icon("icons/python.svg")
-
-#let qwen = icon_color("icons/qwen.svg")
-
-#let javascript = icon("icons/javascript.svg")
-#let typescript = icon("icons/typescript.svg")
-
-#let vue = icon("icons/vue.svg")
-#let nodejs = icon("icons/nodejs.svg")
-#let cplusplus = icon("icons/cplusplus.svg")
-
-#let typst = icon("icons/linux-typst.svg")
 
 
 
