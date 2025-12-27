@@ -2,7 +2,7 @@
 TYP_FILES := $(shell find content -name '*.typ' -not -path '*/_*')
 
 # Generate corresponding HTML file paths in _site/
-HTML_FILES := $(patsubst content/%.typ,_site/Academic-Homepage-Typst-Tufted/%.html,$(TYP_FILES))
+HTML_FILES := $(patsubst content/%.typ,_site/%.html,$(TYP_FILES))
 
 # The main target 'html' depends on all generated HTML files and assets
 html: $(HTML_FILES) assets
@@ -11,13 +11,13 @@ html: $(HTML_FILES) assets
 # $< is the first prerequisite (the .typ file)
 # $@ is the target (the .html file)
 # $(@D) is the directory part of the target
-_site/Academic-Homepage-Typst-Tufted/%.html: content/%.typ
+_site/%.html: content/%.typ
 	@mkdir -p $(@D)
 	typst compile --root .. --features html --format html $< $@
 
 assets:
-	@mkdir -p _site/Academic-Homepage-Typst-Tufted/assets
-	@cp -r assets/* _site/Academic-Homepage-Typst-Tufted/assets/
+	@mkdir -p _site/assets
+	@cp -r assets/* _site/assets/
 
 # A clean rule to remove generated files
 clean:
