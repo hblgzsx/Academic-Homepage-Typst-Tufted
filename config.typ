@@ -3,6 +3,7 @@
 #let template = tufted.tufted-web.with(
   header-links: (
     "/Academic-Homepage-Typst-Tufted/home/": "Home",
+    "/Academic-Homepage-Typst-Tufted/": "Home",
     // "/Academic-Homepage-Typst-Tufted/docs/": "Docs",
     "/Academic-Homepage-Typst-Tufted/blog/": "Blog",
     // "/Academic-Homepage-Typst-Tufted/cv/": "CV",
