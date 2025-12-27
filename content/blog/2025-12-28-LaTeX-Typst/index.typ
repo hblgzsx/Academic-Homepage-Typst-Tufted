@@ -1,4 +1,6 @@
 #import "../blog.typ": *
+#import "../index.typ": template, tufted
+#show: template
 #show: main.with(
   title: "Equivalent Typst Function Names of LaTeX Commands",
   desc: "从 LaTeX 命令到 Typst 函数的等价名称",
