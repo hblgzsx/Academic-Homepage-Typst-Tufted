@@ -133,9 +133,9 @@ h5 {
     line-height: 1.5;
 }
 
-p {
+/* p {
     margin-block-end: 0.5em;
-}
+} */
 
 strong,
 b {
@@ -510,7 +510,7 @@ header {
     transition: all 0.3s ease;
 }
 
-header nav {
+/* header nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -518,7 +518,7 @@ header nav {
     margin: 0 auto;
     padding: 0 1em;
     height: 4rem;
-}
+} */
 
 /* Logo Styling */
 .logo-container {
