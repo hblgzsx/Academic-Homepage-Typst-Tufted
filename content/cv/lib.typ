@@ -22,7 +22,7 @@
   width: 1.25em,
   align(
     center + horizon,
-    image(bytes(read(path), height: 1em),
+    image(bytes(read(path), height: 1em)),
   ),
 )
 
