@@ -103,7 +103,7 @@ Hi there!
 
 
 
-== #fa-graduation-cap Educational Background
+== 🎓 Educational Background
 
 2025.09-2028.06 *合肥工业大学* · *计算机科学与技术* //计算机科学与技术
 
@@ -111,7 +111,7 @@ Hi there!
 
 
 
-== #fa-award Honor and Awards
+== 🎖️ Honor and Awards
 
 #item1(
   [ *第九/十/十一届全国大学生统计建模大赛* ],

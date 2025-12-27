@@ -626,10 +626,10 @@
   url,
 ) = {
   table(
-    columns: (1fr, 1fr, 5fr),
-    gutter: 0.01em,
+    columns: 3,
+    gutter: 0.1em,
     stroke: none,
-    [#logo], [#calendar-block(body: [#year], color: red)], [#calendar-block(body: [link(url)], color: blue)],
+    [#logo], [#calendar-block(body: [#year], color: red)], [#calendar-block(body: [#link(url)], color: blue)],
   )
   [*#title* \ ]
 

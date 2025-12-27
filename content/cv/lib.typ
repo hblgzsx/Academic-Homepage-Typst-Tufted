@@ -182,13 +182,7 @@
   desc,
   endnote,
 ) = {
-  table(
-    columns: (50%, 25%, 25%),
-    gutter: 1em,
-    stroke: none,
-    align: (left + horizon, center + horizon, right + horizon),
-    title, desc, endnote,
-  )
+  [#title, #desc, #endnote]
 }
 
 #let theme-color = rgb("#26267d")
