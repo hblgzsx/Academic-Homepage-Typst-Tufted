@@ -11,7 +11,7 @@ html: $(HTML_FILES) assets
 # $< is the first prerequisite (the .typ file)
 # $@ is the target (the .html file)
 # $(@D) is the directory part of the target
-_site/%.html: content/%.typ
+_site/Academic-Homepage-Typst-Tufted/%.html: content/%.typ
 	@mkdir -p $(@D)
 	typst compile --root .. --features html --format html $< $@
 
