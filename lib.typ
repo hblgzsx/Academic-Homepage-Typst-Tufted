@@ -618,11 +618,13 @@
   url,
 ) = {
   table(
-    columns: 3,
+    columns: (1fr, 1fr, 5fr),
     gutter: 0.01em,
     stroke: none,
-    [#logo], [#year], [#title],
-    [#author], [], [#link(url)],
+    [#logo], [#year], [#link(url)],
   )
+  [#title]
+
+  [#author]
 }
 

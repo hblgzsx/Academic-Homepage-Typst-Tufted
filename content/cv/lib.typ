@@ -222,7 +222,8 @@
 
 #let typst = icon("icons/linux-typst.svg")
 
-#let arxiv = icon("icons/arxiv.svg")
+#let arxiv = image("icons/arxiv.svg", width: 3em)
+
 
 
 
