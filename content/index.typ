@@ -9,11 +9,11 @@
 = 周树勋（Shuxun Zhou/Cyrus.zhou）
 
 #tufted.margin-note[
-  #image("assets/profile-photo.jpg")
+  #image("assets/profile-photo.jpg", width: 20%)
 ]
-#tufted.margin-note[
-  #image("assets/arxiv.svg")
-]
+// #tufted.margin-note[
+//   #image("assets/arxiv.svg")
+// ]
 #tufted.margin-note[
   Statistician, Artist, and Professor Emeritus \
   Website: #link("https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/")[https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/] \

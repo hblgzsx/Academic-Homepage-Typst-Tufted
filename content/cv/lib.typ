@@ -12,7 +12,7 @@
   width: 1.25em,
   align(
     center + horizon,
-    image(bytes(read(path).replace("path d", "path fill=\"" + fill.to-hex() + "\" d")), height: 1em),
+    image(path, height: 1em),
   ),
 )
 
@@ -22,7 +22,7 @@
   width: 1.25em,
   align(
     center + horizon,
-    image(bytes(read(path), height: 1em)),
+    image(path, height: 1em),
   ),
 )
 
