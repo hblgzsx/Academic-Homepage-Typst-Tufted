@@ -51,12 +51,39 @@ Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut
   let bib = load-bibliography(read("papers.bib"))
   for item in bib.values().rev() [
     #let data = item.fields
-    - #arxiv #data.author, "#data.title,", #data.year. DOI: #link(data.url)[#data.doi]
+    - #arxiv #data.author, "#data.title,", #data.year. URL: #link(data.url)[#data.url]
   ]
 }
 
+== #fa-graduation-cap Educational Background
+#sidebar(with-line: true, side-width: 24%)[
+  2025.09-2028.06
+][
+  *合肥工业大学* · *计算机科学与技术* //计算机科学与技术
+]
+#sidebar(with-line: true, side-width: 24%)[
+  2021.09-2025.06
+][
+  *华北理工大学* · *智能科学与技术* //智能科学与技术
+]
 
-== Education
-- PhD in Political Science: Yale University (1968).
-- MS in Statistics: Stanford University.
-- BS in Statistics: Stanford University.
+
+== #fa-award Honor and Awards
+
+#item1(
+  [ *第九/十/十一届全国大学生统计建模大赛* ],
+  [ *省一/省一/国三* ],
+  date[2025.10],
+)
+
+#item1(
+  [ *2023MCM/2024 ICM 美国大学生数学建模竞赛* ],
+  [ *Honorable/Meritorious* ],
+  date[2024.05],
+)
+
+#item1(
+  [ *第八/九届高校计算机大赛-团体程序设计天梯赛* ],
+  [ *国二/国三* ],
+  date[2023.04/2024.04],
+)
