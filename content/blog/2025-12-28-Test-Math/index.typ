@@ -1,18 +1,6 @@
 #import "../index.typ": template, tufted
 #show: template
 #import "../../src/3rd_party/mathyml/lib.typ": *
-#import "../blog.typ": *
-#show: main.with(
-  title: "Test the math equation",
-  desc: "Test the math equation",
-  date: "2025-06-01",
-  tags: (
-    "programming",
-    "typst",
-  ),
-  show-outline: true,
-)
-
 
 
 
