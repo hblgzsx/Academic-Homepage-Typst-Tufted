@@ -7,6 +7,7 @@
 
 - #link("2025-12-28-Test-Math/")[Test Typst Math]
 - #link("2025-12-28-LaTeX-Typst/")[Equivalent Typst Function Names of LaTeX Commands]
+- #link("2025-12-28-Typst/")[Typst 语法]
 
 
 
@@ -16,5 +17,6 @@
 // == 2024
 
 // - #link("2024-10-04-iterators-generators/")[Iterators vs Generators in Python]
+
 
 
