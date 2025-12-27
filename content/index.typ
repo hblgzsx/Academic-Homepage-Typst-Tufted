@@ -9,7 +9,7 @@
 = 周树勋（Shuxun Zhou/Cyrus.zhou）
 
 #tufted.margin-note[
-  #image("assets/profile-photo.png")
+  #image("assets/profile-photo.jpg")
 ]
 #tufted.margin-note[
   #image("assets/arxiv.svg")
