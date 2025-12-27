@@ -621,9 +621,9 @@
     columns: (1fr, 1fr, 5fr),
     gutter: 0.01em,
     stroke: none,
-    [#logo], [#year], [#link(url)],
+    [#logo], [#calendar-block(body: [#year], color: red)], [#calendar-block(body: [link(url)], color: blue)],
   )
-  [#title]
+  [*#title* \ ]
 
   [#author]
 }
