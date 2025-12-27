@@ -53,18 +53,20 @@ Hi there!
 // }
 
 == 📝 Publications
-#let logo = [
+#let logo = (
   "arxiv",
   "arxiv",
   "arxiv",
-]
+)
 
 #{
   let bib = load-bibliography(read("assets/papers.bib"))
-  for (idx, item) in bib.values().rev().enumerate() [
-    #let data = item.fields
-    - #item2(logo[#idx], data.title, data.author, data.year, data.url)
-  ]
+  for (idx, item) in bib.values().rev().enumerate() {
+    let data = item.fields
+    [
+      - #item2(logo.at(idx), data.title, data.author, data.year, data.url)
+    ]
+  }
 }
 
 // #{
