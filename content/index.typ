@@ -15,7 +15,7 @@
 //   #image("assets/arxiv.svg")
 // ]
 #tufted.margin-note[
-  Statistician, Artist, and Professor Emeritus \
+  中国，安徽合肥，合肥工业大学，硕士研究生\
   Website: #link("https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/")[https://hblgzsx.github.io/Academic-Homepage-Typst-Tufted/] \
   Email: #link("mailto:cyrus.zhou@mail.hfut.edu.cn")[`cyrus.zhou@mail.hfut.edu.cn`]
 ]
@@ -53,13 +53,46 @@ Hi there!
 // }
 
 == 📝 Publications
+// #{
+//   let bib = load-bibliography(read("assets/papers.bib"))
+//   for item in bib.values().rev() [
+//     #let data = item.fields
+//     - #arxiv #data.author, "#data.title,", #data.year. URL: #link(data.url)[#data.url]
+//   ]
+// }
+
 #{
   let bib = load-bibliography(read("assets/papers.bib"))
-  for item in bib.values().rev() [
-    #let data = item.fields
-    - #arxiv #data.author, "#data.title,", #data.year. URL: #link(data.url)[#data.url]
+
+  // 自定义图标列表（顺序要和 bib 条目顺序对应）
+  let icons = [
+    "assets/arxiv.svg",
+    "assets/arxiv.svg",
+    "assets/arxiv.svg",
+    "assets/arxiv.svg",
   ]
+
+  tblr(
+    columns: (1em, 2fr, 5fr, 2fr),
+    header-rows: 1,
+    hline: 0.03em,
+    [
+      for idx, item in bib.values().rev().enumerate() [
+      // 第一列用自定义图标
+      html.img(
+      src: icons[idx],
+      style: "height:1em; width:1em; vertical-align: middle;"
+      ),
+      let data = item.fields
+      #data.author,
+      #data.title,
+      #data.year + " / " + #link(data.url)[#data.url]
+      ]
+    ],
+  )
 }
+
+
 
 == #fa-graduation-cap Educational Background
 

@@ -182,10 +182,9 @@
   desc,
   endnote,
 ) = {
-  v(0.25em)
   table(
-    columns: (40%, 2fr, 2fr),
-    gutter: 3em,
+    columns: (40%, 20%, 20%),
+    gutter: 1em,
     stroke: none,
     align: (left + horizon, center + horizon, right + horizon),
     title, desc, endnote,
