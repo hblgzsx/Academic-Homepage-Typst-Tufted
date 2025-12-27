@@ -78,6 +78,7 @@ Hi there!
     hline: 0.03em,
     [
       for idx, item in bib.values().rev().enumerate() [
+      (
       // 第一列用自定义图标
       html.img(
       src: icons[idx],
@@ -86,6 +87,7 @@ Hi there!
       #item["author"],
       #item["title"],
       #item["year"] + " / " + #link(item["url"])[#item["url"]]
+      )
       ]
     ],
   )
