@@ -163,3 +163,22 @@ POST TILES
 .post-tile p {
     margin: 0.25rem 0 0;
 }
+
+.profile-photo {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 3px 6px rgba(0, 0, 0, 0.1);
+}
