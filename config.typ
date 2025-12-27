@@ -1,5 +1,5 @@
 #import "@preview/tufted:0.1.0"
-#import "/lib.typ": *
+#import "lib.typ": *
 
 #let template = tufted.tufted-web.with(
   header-links: (
