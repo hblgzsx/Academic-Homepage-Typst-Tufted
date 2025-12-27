@@ -1,4 +1,3 @@
-
 // 颜色常量
 #let colors = (
   bg: rgb("#fffef5"), // 背景色：白偏黄
@@ -609,7 +608,16 @@
   style: "width: 40%;height:auto;",
 )
 
-
+#let calendar-block(
+  body: "内容",
+  color: red,
+) = block(
+  fill: color.lighten(20%),
+  inset: 1pt,
+  radius: 2pt,
+  stroke: 1pt + color.darken(20%),
+  text(fill: white)[#body],
+)
 #let item2(
   logo,
   title,

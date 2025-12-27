@@ -183,7 +183,7 @@
   endnote,
 ) = {
   table(
-    columns: (40%, 20%, 20%),
+    columns: (50%, 25%, 25%),
     gutter: 1em,
     stroke: none,
     align: (left + horizon, center + horizon, right + horizon),
