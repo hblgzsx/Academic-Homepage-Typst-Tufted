@@ -21,7 +21,7 @@
 
 #import "@preview/cetz:0.4.2"
 
-#import "/lib.typ": *
+#import "lib.typ": *
 
 
 
