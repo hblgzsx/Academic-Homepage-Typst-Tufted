@@ -83,10 +83,9 @@ Hi there!
       src: icons[idx],
       style: "height:1em; width:1em; vertical-align: middle;"
       ),
-      let data = item.fields
-      #data.author,
-      #data.title,
-      #data.year + " / " + #link(data.url)[#data.url]
+      #item.fields.author,
+      #item.fields.title,
+      #item.fields.year + " / " + #link(item.fields.url)[#item.fields.url]
       ]
     ],
   )
