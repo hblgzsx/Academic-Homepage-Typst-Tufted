@@ -7,15 +7,15 @@
 #blog-info(
   title: "Equivalent Typst Function Names of LaTeX Commands",
   sub-title: "从 LaTeX 命令到 Typst 函数的等价名称",
-  date: "2025-12-28",
+  date: "2026-01-02",
   author: "Jianrui Lyu(tolvjr@163.com)原著, 周树勋补充",
   show-outline: true,
 )
 
 
-= Equivalent Typst Function Names of LaTeX Commands
+= 从 LaTeX 命令到 Typst 函数的等价转换
 
-从 LaTeX 命令到 Typst 函数的等价名称
+Equivalent Typst Function Names of LaTeX Commands
 
 // #let total-pages = 5
 
@@ -925,8 +925,11 @@
   ),
 )
 
+
+
 = References
 
 + Jim Hefferon, LaTeX Math for Undergrads, https://gitlab.com/jim.hefferon/undergradmath, 2020.
 + Johan Xie, Typst Math for Undergrads, https://github.com/johanvx/typst-undergradmath, 2023.
 + Scott Pakin, The Comprehensive LaTeX Symbol List, https://ctan.org/pkg/comprehensive, 2024.
++ Jianrui Lyu,Equivalent Typst Function Names of LaTeX Commands, #link("https://github.com/hblgzsx/Academic-Homepage-Typst-Tufted/blob/41ac30040edbcaed0dcdd19b7b00187e4dfa40af/content/blog/assests/Latex2typst.pdf", "https://github.com/hblgzsx/Academic-Homepage-Typst-Tufted/blob/41ac30040edbcaed0dcdd19b7b00187e4dfa40af/content/blog/assests/Latex2typst.pdf")

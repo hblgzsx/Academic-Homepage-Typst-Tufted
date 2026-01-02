@@ -14,6 +14,10 @@
 = 一份(不太)简短的Typst介绍
 
 Typst官方文档中文翻译版，总共有206页。
+#link(
+  "https://github.com/hblgzsx/Academic-Homepage-Typst-Tufted/blob/41ac30040edbcaed0dcdd19b7b00187e4dfa40af/content/blog/assests/Typst.pdf",
+  "原文链接跳转",
+)
 #let total-pages = 206
 
 #for i in range(1, total-pages + 1) {

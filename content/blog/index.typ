@@ -5,9 +5,10 @@
 
 == 2025-12
 
-- #link("2025-12-28-Test-Math/")[Test Typst Math]
-- #link("2025-12-28-LaTeX-Typst/")[Equivalent Typst Function Names of LaTeX Commands]
-- #link("2025-12-28-Typst/")[Typst 语法]
+// - #link("2025-12-28-Test-Math/")[Test Typst Math]
+- #link("2025-12-28-Typst/")[Typst语法中文文档]
+- #link("2025-12-28-LaTeX-Typst/")[从 LaTeX 命令到 Typst 函数的等价转换]
+
 
 
 
