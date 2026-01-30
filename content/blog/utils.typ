@@ -43,15 +43,11 @@
       #text(weight: "bold", size: 1.1em)[文章目录]
       #v(0.5em)
       // 使用 columns(2) 让目录分两列显示，节省垂直空间
-      #columns(2)[
-        #outline(title: none, indent: 1em, depth: 3, target: heading)
-      ]
+      #outline(title: none, indent: 1em, depth: 3, target: heading)
     ]
     v(2em) // 目录和正文的间距
   }
 
-
-  // 【步骤 2】再放正文 (Content Second)
   // 宽度 = 100% - 240pt，留出右边空间
   block(
     width: 100% - 240pt,
