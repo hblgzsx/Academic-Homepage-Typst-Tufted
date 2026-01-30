@@ -22,7 +22,7 @@
   if show-outline {
     place(
       right + top,
-      dx: 240pt, // 将大纲推到页面右边缘外侧，根据你的页面边距调整
+      dx: 10pt, // 将大纲推到页面右边缘外侧，根据你的页面边距调整
       float: true,
       block(
         width: 200pt,
