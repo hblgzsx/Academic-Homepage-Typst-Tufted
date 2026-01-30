@@ -1,14 +1,6 @@
 #import "@preview/cmarker:0.1.8"
 #import "@preview/mitex:0.2.6": mitex
 
-// ==========================================
-// 1. 全局字体修复 (防方块核心)
-// ==========================================
-#let font-stack = ("Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "SimSun", "Heiti SC")
-#set text(font: font-stack, lang: "zh")
-
-// 强制修复公式里的 \text{} 显示
-#show math.equation: set text(font: ("New Computer Modern Math", ..font-stack))
 
 // ==========================================
 // 2. 博客布局 (修复 show-outline 参数)
@@ -21,9 +13,24 @@
   show-outline: true, // <--- 1. 参数加回来了！
   doc,
 ) = {
+  show heading: it => block(width: 100%, below: 1em)[
+    #stack(
+      dir: ltr,
+      // 左侧：标题本体
+      align(left, it),
+      // 中间：弹簧，把右边的元素顶到最右侧
+      h(1fr),
+      // 右侧：回到顶端的链接
+      align(bottom + right)[
+        #link(<top-anchor>)[
+          #text(size: 0.6em, fill: gray.lighten(30%), weight: "regular")[↑ 回到顶端]
+        ]
+      ],
+    )
+  ]
   // --- 头部区域 ---
   block(width: 100%, inset: (bottom: 2em))[
-    #text(size: 2em, weight: "bold")[#title] \
+    #text(size: 2em, weight: "bold")[#title]<top-anchor> \
     #if sub-title != none [
       #v(0.2em) #text(size: 1.2em, fill: gray.darken(20%))[#sub-title] \
     ]
