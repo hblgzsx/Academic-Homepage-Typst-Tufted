@@ -15,7 +15,7 @@
 // #show raw.where(lang: "html"): it => it.text
 // #let html(content) = raw(content, lang: "html")
 
-#let html(content) = raw(content, block: true, lang: "html")
+// #let html(content) = raw(content, block: true, lang: "html")
 // ==========================================
 // 2. 博客布局 (修复 show-outline 参数)
 // ==========================================
@@ -27,52 +27,45 @@
   show-outline: true, // <--- 1. 参数加回来了！
   doc,
 ) = {
-  // 注入 CSS
-  html(
-    "
-    <style>
-      .blog-container { display: flex; flex-direction: row; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 20px; }
-      .blog-main { flex: 1; min-width: 0; }
-      /* 如果没有 sidebar，main 会自动变宽 */
-      .blog-sidebar { width: 250px; flex-shrink: 0; }
-      .sticky-box { position: sticky; top: 20px; padding-left: 20px; border-left: 2px solid #eee; }
-      @media (max-width: 800px) {
-        .blog-container { flex-direction: column; }
-        .blog-sidebar { width: 100%; border-left: none; border-top: 2px solid #eee; margin-top: 2em; }
-      }
-    </style>
-  ",
-  )
-
-  // --- 头部 ---
+  // --- 页面头部 ---
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title] \
     #if sub-title != none [
-      #v(0.2em)
-      #text(size: 1.2em, fill: gray.darken(20%))[#sub-title] \
+      #v(0.2em) #text(size: 1.2em, fill: gray.darken(20%))[#sub-title] \
     ]
-    #v(0.5em)
-    #text(fill: gray)[#author · #date]
+    #v(0.5em) #text(fill: gray)[#author · #date]
     #line(length: 100%, stroke: 0.5pt + gray)
   ]
 
-  // --- HTML 布局开始 ---
-  html("<div class='blog-container'>")
+  // --- 核心修改：使用 Table 实现布局 ---
+  // Table 在转 HTML 时通常会被渲染为 <table> 标签，天生支持左右分栏
+  table(
+    columns: (1fr, 260pt),
+    // 左栏自适应，右栏固定宽
+    stroke: none,
+    // 【关键】隐藏边框，让它看起来像布局
+    column-gutter: 2em,
+    // 两栏之间的间距
+    inset: 0pt,
+    // 移除默认的单元格内边距，让文字对齐
 
-  // 左侧正文
-  html("<div class='blog-main'>")
-  doc
-  html("</div>")
+    // [左栏]：放置正文
+    align(left + top, doc),
 
-  // 右侧侧边栏 (关键修改：用 if 包裹整个右侧 div)
-  if show-outline {
-    // <--- 2. 只有为 true 时才渲染这块 HTML
-    html("<div class='blog-sidebar'><div class='sticky-box'>")
-    text(weight: "bold", size: 1.1em)[目录]
-    v(0.5em)
-    outline(title: none, indent: 1em, depth: 3)
-    html("</div></div>")
-  }
-
-  html("</div>")
+    // [右栏]：放置大纲
+    align(left + top)[
+      #if show-outline {
+        // 给大纲加一个左边框装饰，模仿 sidebar 效果
+        block(
+          stroke: (left: 1pt + gray.lighten(70%)),
+          inset: (left: 1.5em),
+          width: 100%,
+        )[
+          #text(weight: "bold", size: 1.1em)[目录]
+          #v(0.5em)
+          #outline(title: none, indent: 1em, depth: 3)
+        ]
+      }
+    ],
+  )
 }
