@@ -27,31 +27,7 @@
   show-outline: true, // <--- 1. 参数加回来了！
   doc,
 ) = {
-  // --- A. 设置页面布局 ---
-  // 关键点：右边距设为 300pt (约 10cm)，给侧边栏腾出空间
-  set page(
-    margin: (left: 1in, right: 300pt),
-  )
-
-  // --- B. 放置侧边栏 ---
-  // 使用 place 将大纲“扔”到右侧的空白边距里
-  if show-outline {
-    place(
-      top + right, // 定位基准：正文区域的右上角
-      dx: 260pt, // 向右偏移 260pt，进入边距区域 (因为 margin 是 300pt)
-      scope: "parent",
-      block(width: 240pt)[ // 限制侧边栏宽度
-        #set text(size: 0.9em)
-        #text(weight: "bold")[目录]
-        #v(0.5em)
-        #line(length: 100%, stroke: 0.5pt + gray)
-        #outline(title: none, indent: 1em, depth: 3)
-      ],
-    )
-  }
-
-  // --- C. 渲染头部和正文 ---
-  // 头部
+  // --- 头部区域 ---
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title] \
     #if sub-title != none [
@@ -61,6 +37,35 @@
     #line(length: 100%, stroke: 0.5pt + gray)
   ]
 
-  // 正文 (doc 会自动在左侧较窄的区域内排版，超长也没关系)
-  doc
+  // --- 布局核心逻辑 ---
+
+  // 1. 放置侧边栏 (Ghost Layer)
+  // 使用 place 将它悬浮在父容器的右上角
+  // 因为它是悬浮的，不会占用流式布局的空间，也不会被挤跑
+  if show-outline {
+    place(
+      top + right,
+      block(width: 220pt)[ // 设定侧边栏宽度
+        #set text(size: 0.9em)
+        #block(
+          stroke: (left: 1pt + gray.lighten(70%)), // 左侧装饰线
+          inset: (left: 1em),
+          width: 100%,
+        )[
+          #text(weight: "bold")[目录]
+          #v(0.5em)
+          #outline(title: none, indent: 1em, depth: 3)
+        ]
+      ],
+    )
+  }
+
+  // 2. 放置正文 (Content Layer)
+  // 我们给正文套一个 block，强行限制它的宽度
+  // 宽度 = 100% (父容器总宽) - 240pt (留给侧边栏的空间)
+  block(
+    width: 100% - 240pt,
+    inset: (right: 2em), // 再加点内边距，防止文字紧贴侧边栏
+    doc, // <--- 正文在这里渲染，支持跨页
+  )
 }
