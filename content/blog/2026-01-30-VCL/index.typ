@@ -2,7 +2,7 @@
 #import "../utils.typ": blog-info
 #import "@preview/mitex:0.2.6": mitex
 #show: template
-
+#set text(font: ("Source Han Sans", "SimSun"), lang: "zh")
 #blog-info(
   title: "变分持续学习",
   sub-title: "VCL论文个人解读总结",

@@ -131,9 +131,9 @@ $Q$一般为高斯分布族，$Z_t$是 $p^∗_t (θ) = q_{t−1}(θ) p(D_t|θ)$ 
 
 每次保留的新核心集为$C_t$， 除核心集剩下所有的数据为（$\mathcal{D}_t \cup C_{t-1} \setminus C_t$）。
 
-**$\tilde{q}_t(\theta)$：** 这是**“长期记忆”**。它是要传给下一个任务 $t+1$ 继续使用的。它必须包含所有**不再被保留**的数据的知识。
+**$\tilde{q}_t(\theta)$：**  这是 **“长期记忆”**。它是要传给下一个任务 $t+1$ 继续使用的。它必须包含所有 **不再被保留** 的数据的知识。
 
-**$q_t(\theta)$：** 这是**“临考状态”**。它只用来做当前的预测，**不传给下一个任务**。
+**$q_t(\theta)$：** 这是 **“临考状态”**。它只用来做当前的预测，**不传给下一个任务**。
 
 以上公式 (2) 的意思就是：用上一步的长期记忆 $\tilde{q}_{t-1}$ 作为基础，把这些**即将被丢弃的数据**里的知识，彻底“消化”进大脑（参数）里，形成新的长期记忆 $\tilde{q}_t$。
 
@@ -387,12 +387,11 @@ $$
 $$
 % 递归公式
 \Sigma_t^{-1} = \Phi_t + \Sigma_{t-1}^{-1}
-
 % Phi_t 的定义 (where 条件)
 \text{ 其中 }  \Phi_t = -\nabla\nabla_\theta \sum_{n=1}^{N_t} \log p(y_t^{(n)} | \theta, x_t^{(n)}) \bigg|_{\theta=\theta_t}  \text{ 且 } \lambda_t = 1.
 $$
 
-​    定义 $\Phi_t =  -\nabla\nabla_\theta \sum_{n=1}^{N_t} \log p(y_t^{(n)} | \theta, x_t^{(n)}) \bigg|_{\theta=\theta_t} $ 。
+​    定义 $\Phi_t =  -\nabla\nabla_\theta \sum_{n=1}^{N_t} \log p(y_t^{(n)} | \theta, x_t^{(n)}) \bigg|_{\theta=\theta_t}$ 。
 
 这里的 $\nabla\nabla$ 代表二阶导数，也就是数学上的海森矩阵 (Hessian Matrix)。
 
