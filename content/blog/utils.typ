@@ -31,30 +31,25 @@
     #line(length: 100%, stroke: 0.5pt + gray)
   ]
 
-  // --- 布局核心逻辑 (已修正顺序) ---
-
-  // 【步骤 1】先放侧边栏 (Sidebar First)
-  // 把它放在正文前面，确保在 HTML DOM 结构中它位于顶部，不会被挤到下面去
   if show-outline {
-    place(
-      top + right,
-      block(width: 220pt)[
-        #set text(size: 0.9em)
-        // 给个背景色调试，确认它是否渲染了
-        #block(
-          fill: luma(250), // 淡淡的灰色背景，确保你能看见它
-          stroke: (left: 2pt + red.lighten(50%)), // 红色边框方便找位置
-          inset: 1em,
-          width: 100%,
-        )[
-          #text(weight: "bold")[目录]
-          #v(0.5em)
-          // 显式指定 target，防止抓不到标题
-          #outline(title: none, indent: 1em, depth: 3, target: heading)
-        ]
-      ],
-    )
+    // 给目录加一个灰色背景盒，稍微美化一下
+    block(
+      fill: luma(248),
+      width: 100%,
+      inset: 1em,
+      radius: 4pt,
+      stroke: (left: 4pt + gray),
+    )[
+      #text(weight: "bold", size: 1.1em)[文章目录]
+      #v(0.5em)
+      // 使用 columns(2) 让目录分两列显示，节省垂直空间
+      #columns(2)[
+        #outline(title: none, indent: 1em, depth: 3, target: heading)
+      ]
+    ]
+    v(2em) // 目录和正文的间距
   }
+
 
   // 【步骤 2】再放正文 (Content Second)
   // 宽度 = 100% - 240pt，留出右边空间
