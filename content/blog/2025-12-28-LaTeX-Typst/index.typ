@@ -4,14 +4,15 @@
 
 #show: template
 #import "../utils.typ": blog-info
-#blog-info(
+
+#show: doc => blog-info(
   title: "Equivalent Typst Function Names of LaTeX Commands",
   sub-title: "从 LaTeX 命令到 Typst 函数的等价名称",
   date: "2026-01-02",
   author: "Jianrui Lyu(tolvjr@163.com)原著, 周树勋补充",
   show-outline: true,
+  doc, // 把剩下的内容传进去
 )
-
 
 = 从 LaTeX 命令到 Typst 函数的等价转换
 

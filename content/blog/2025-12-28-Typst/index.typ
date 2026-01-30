@@ -3,14 +3,14 @@
 #import "../utils.typ": blog-info
 #show: template
 
-#blog-info(
+#show: doc => blog-info(
   title: "一份(不太)简短的Typst介绍",
   sub-title: "Typst官方文档中文翻译版",
   date: "2025-12-28",
   author: "中文翻译：Casea",
   show-outline: true,
+  doc, // 把剩下的内容传进去
 )
-
 = 一份(不太)简短的Typst介绍
 
 Typst官方文档中文翻译版，总共有206页。
