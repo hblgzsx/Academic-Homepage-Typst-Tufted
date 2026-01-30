@@ -472,6 +472,18 @@
     it.body
   })
 
+  show heading: it => block(
+    width: 100%,
+    below: 1.5em,
+    // 【这里设置下划线】
+    // 底部画一条 0.5pt 的灰色实线
+    stroke: (bottom: 0.5pt + gray.lighten(50%)),
+    // 设置文字和线的距离 (CSS padding-bottom)
+    inset: (bottom: 0.15em),
+  )[
+    #it
+  ]
+
   show heading.where(level: 1): set align(center)
   // show heading.where(level: 1): set heading(numbering: none)
   show heading.where(level: 1): set text(config.title1-size)
