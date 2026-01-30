@@ -21,9 +21,6 @@
   show-outline: true,
   doc, // <--- 关键：这里接收正文内容，放在最后
 ) = {
-  // 设置 PDF/HTML 的元数据
-  set document(title: title, author: author)
-
   // A. 渲染顶部 Header 区域
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title] \
