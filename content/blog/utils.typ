@@ -15,7 +15,7 @@
 ) = {
   // --- 头部区域 ---
   block(width: 100%, inset: (bottom: 2em))[
-    #text(size: 2em, weight: "bold")[#title]<top-anchor> \
+    #text(size: 2em, weight: "bold")[#title]\
     #if sub-title != none [
       #v(0.2em) #text(size: 1.2em, fill: gray.darken(20%))[#sub-title] \
     ]
@@ -46,19 +46,4 @@
     inset: (right: 2em),
     doc,
   )
-
-  align(center)[
-    // 关键点 2: 链接到 <top-anchor>
-    #link(<top-anchor>)[
-      #block(
-        fill: luma(240),
-        stroke: 1pt + gray.lighten(50%),
-        inset: (x: 1.5em, y: 0.8em),
-        radius: 4pt,
-        cursor: "pointer", // 提示鼠标这是可点击的
-      )[
-        #text(size: 0.9em, fill: black.lighten(20%))[↑ 回到顶端]
-      ]
-    ]
-  ]
 }
