@@ -1,5 +1,5 @@
 #import "@preview/cmarker:0.1.8"
-#import "@preview/mitex:0.1.0": mitex
+#import "@preview/mitex:0.2.6": mitex
 
 // ==========================================
 // 1. 全局字体修复 (防方块核心)

@@ -1,6 +1,7 @@
 #import "../index.typ": template, tufted
 #import "../utils.typ": blog-info
 #import "@preview/mitex:0.2.6": mitex
+#import "@preview/cmarker:0.1.8"
 #show: template
 #set text(font: ("Source Han Sans", "SimSun"), lang: "zh")
 
@@ -13,7 +14,7 @@
   doc, // 把剩下的内容传进去
 )
 
-#import "@preview/cmarker:0.1.8"
+
 
 #cmarker.render(
   read("OnlineLearning.md"),
