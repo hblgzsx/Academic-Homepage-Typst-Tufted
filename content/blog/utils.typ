@@ -13,21 +13,6 @@
   show-outline: true, // <--- 1. 参数加回来了！
   doc,
 ) = {
-  show heading: it => block(width: 100%, below: 1em)[
-    #stack(
-      dir: ltr,
-      // 左侧：标题本体
-      align(left, it),
-      // 中间：弹簧，把右边的元素顶到最右侧
-      h(1fr),
-      // 右侧：回到顶端的链接
-      align(bottom + right)[
-        #link(<top-anchor>)[
-          #text(size: 0.6em, fill: gray.lighten(30%), weight: "regular")[↑ 回到顶端]
-        ]
-      ],
-    )
-  ]
   // --- 头部区域 ---
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title]<top-anchor> \
@@ -61,4 +46,19 @@
     inset: (right: 2em),
     doc,
   )
+
+  align(center)[
+    // 关键点 2: 链接到 <top-anchor>
+    #link(<top-anchor>)[
+      #block(
+        fill: luma(240),
+        stroke: 1pt + gray.lighten(50%),
+        inset: (x: 1.5em, y: 0.8em),
+        radius: 4pt,
+        cursor: "pointer", // 提示鼠标这是可点击的
+      )[
+        #text(size: 0.9em, fill: black.lighten(20%))[↑ 回到顶端]
+      ]
+    ]
+  ]
 }
