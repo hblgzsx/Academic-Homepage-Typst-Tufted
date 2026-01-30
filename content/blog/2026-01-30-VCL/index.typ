@@ -1,5 +1,6 @@
 #import "../index.typ": template, tufted
 #import "../utils.typ": blog-info
+#import "@preview/mitex:0.2.6": mitex
 #show: template
 
 #blog-info(
@@ -15,4 +16,5 @@
 #cmarker.render(
   read("OnlineLearning.md"),
   scope: (image: (source, alt: none, format: auto) => image(source, alt: alt, format: format)),
+  math: mitex,
 )
