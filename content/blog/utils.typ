@@ -13,6 +13,17 @@
   show-outline: true, // <--- 1. 参数加回来了！
   doc,
 ) = {
+  show heading: it => block(width: 100%, below: 1.5em)[
+    // 1. 直接显示标题文字
+    #it
+
+    // 2. 垂直间距 (让线和字分开一点)
+    #v(0.3em)
+
+    // 3. 画一条灰色的线
+    #line(length: 100%, stroke: 0.5pt + gray.lighten(50%))
+  ]
+
   // --- 头部区域 ---
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title]\
