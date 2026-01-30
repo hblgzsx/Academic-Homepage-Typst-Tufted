@@ -1,4 +1,4 @@
-$$
+<!-- $$
 \newcommand{\bx}{\mathbf{x}}
 \newcommand{\by}{\mathbf{y}}
 \newcommand{\bv}{\mathbf{v}}
@@ -6,13 +6,13 @@ $$
 \newcommand{\cL}{\mathcal{L}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\ra}{\rightarrow}
-$$
+$$ -->
 
 
 
 # Online Learning Methods
 
-[TOC]
+<!-- [TOC] -->
 
 # 变分持续学习
 
@@ -323,7 +323,7 @@ $$
 
 神经网络持续学习方法一般都采用正则化极大似然估计，优化如下形式的目标：
 $$
-\cL^t(\theta) = \sum_{n=1}^{N_t} \log p(y_t^{(n)} \mid \theta, x_t^{(n)}) - \frac{1}{2} \lambda_t(\theta - \theta_{t-1})^T \sum_{t - 1}^{-1} (\theta - \theta_{t-1})
+\mathcal{L}^t(\theta) = \sum_{n=1}^{N_t} \log p(y_t^{(n)} \mid \theta, x_t^{(n)}) - \frac{1}{2} \lambda_t(\theta - \theta_{t-1})^T \sum_{t - 1}^{-1} (\theta - \theta_{t-1})
 $$
 
 **常规的神经网络训练（找最大值）只能给你参数的最佳数值（$\theta$），却算不出参数的重要性/不确定性（$\Sigma$）。** 而没有这个 $\Sigma$，你就没法精确地告诉下一个任务“哪些参数不能动”，从而无法有效地进行持续学习。因此如何有效设计$\Sigma$表示参数的重要性极为关键。
@@ -331,7 +331,7 @@ $$
 大脑基于神经突触可塑性机制进化出复杂的神经认知功能，基于这一思想，参数正则化方法构建权重巩固机制，**对网络中重要的神经元连接施加保护**。具体来讲，在训练第$t$个任务时，参数正则化的方法具有如下形式正则损失:
 
 $$
-\cL_{reg} = \sum_{i} \Omega_{t-1}^i (\theta_t^i - \theta_{t-1}^i)^2
+\mathcal{L}_{reg} = \sum_{i} \Omega_{t-1}^i (\theta_t^i - \theta_{t-1}^i)^2
 $$
 
 其中:
@@ -344,7 +344,7 @@ $$
 
 #### 极大似然估计和最大后验估计
 
-优化目标的正则化项可以解释为高斯先验，$q(\theta \mid D_{1:t-1}) = \cL(\theta;\theta_{t-1}, \sum_{t-1}/\lambda_t)$。
+优化目标的正则化项可以解释为高斯先验，$q(\theta \mid D_{1:t-1}) = \mathcal{L}(\theta;\theta_{t-1}, \sum_{t-1}/\lambda_t)$。
 
 > ### MLE vs MAP
 >
