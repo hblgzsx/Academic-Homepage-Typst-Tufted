@@ -9,7 +9,8 @@
 - #link("2025-12-28-Typst/")[Typst语法中文文档]
 - #link("2025-12-28-LaTeX-Typst/")[从 LaTeX 命令到 Typst 函数的等价转换]
 
-
+== 2026-01
+- #link("2026-01-30-VCL/")[变分持续学习VCL论文个人解读]
 
 
 // - #link("2025-10-30-normal-distribution/")[Normal Distribution]
