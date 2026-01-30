@@ -9,53 +9,70 @@
 
 // 强制修复公式里的 \text{} 显示
 #show math.equation: set text(font: ("New Computer Modern Math", ..font-stack))
+// ==========================================
+// 1. HTML 注入与样式配置
+// ==========================================
+#show raw.where(lang: "html"): it => it.text
+#let html(content) = raw(content, lang: "html")
+
 
 // ==========================================
-// 2. 定义 blog-info (布局函数)
+// 2. 博客布局 (修复 show-outline 参数)
 // ==========================================
 #let blog-info(
   title: "默认标题",
   sub-title: none,
-  date: datetime.today().display(),
   author: "匿名",
-  show-outline: true,
-  doc, // <--- 关键：这里接收正文内容，放在最后
+  date: datetime.today().display(),
+  show-outline: true, // <--- 1. 参数加回来了！
+  doc,
 ) = {
-  // A. 渲染顶部 Header 区域
+  // 注入 CSS
+  html(
+    "
+    <style>
+      .blog-container { display: flex; flex-direction: row; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 20px; }
+      .blog-main { flex: 1; min-width: 0; }
+      /* 如果没有 sidebar，main 会自动变宽 */
+      .blog-sidebar { width: 250px; flex-shrink: 0; }
+      .sticky-box { position: sticky; top: 20px; padding-left: 20px; border-left: 2px solid #eee; }
+      @media (max-width: 800px) {
+        .blog-container { flex-direction: column; }
+        .blog-sidebar { width: 100%; border-left: none; border-top: 2px solid #eee; margin-top: 2em; }
+      }
+    </style>
+  ",
+  )
+
+  // --- 头部 ---
   block(width: 100%, inset: (bottom: 2em))[
     #text(size: 2em, weight: "bold")[#title] \
     #if sub-title != none [
-      #text(size: 1.2em, fill: gray)[#sub-title] \
+      #v(0.2em)
+      #text(size: 1.2em, fill: gray.darken(20%))[#sub-title] \
     ]
     #v(0.5em)
     #text(fill: gray)[#author · #date]
     #line(length: 100%, stroke: 0.5pt + gray)
   ]
 
-  // B. 渲染 Grid 布局 (左侧正文 + 右侧大纲)
-  grid(
-    columns: (1fr, 200pt),
-    // 左侧自适应，右侧固定
-    gutter: 2em,
-    // 栏间距
+  // --- HTML 布局开始 ---
+  html("<div class='blog-container'>")
 
-    // 1. 左栏：放置正文 (doc)
-    align(left, doc),
+  // 左侧正文
+  html("<div class='blog-main'>")
+  doc
+  html("</div>")
 
-    // 2. 右栏：放置大纲 (Sidebar)
-    if show-outline {
-      align(top + left)[
-        #block(
-          stroke: (left: 2pt + gray.lighten(60%)),
-          inset: (left: 1em),
-          width: 100%, // 占满右侧格子的宽度
-        )[
-          #text(weight: "bold", fill: black.lighten(20%))[目录]
-          #v(0.5em)
-          // 这里的 outline 会自动抓取 cmarker 生成的标题
-          #outline(title: none, indent: 1em, depth: 3)
-        ]
-      ]
-    },
-  )
+  // 右侧侧边栏 (关键修改：用 if 包裹整个右侧 div)
+  if show-outline {
+    // <--- 2. 只有为 true 时才渲染这块 HTML
+    html("<div class='blog-sidebar'><div class='sticky-box'>")
+    text(weight: "bold", size: 1.1em)[目录]
+    v(0.5em)
+    outline(title: none, indent: 1em, depth: 3)
+    html("</div></div>")
+  }
+
+  html("</div>")
 }
