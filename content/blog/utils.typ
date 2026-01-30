@@ -9,13 +9,7 @@
 
 // 强制修复公式里的 \text{} 显示
 #show math.equation: set text(font: ("New Computer Modern Math", ..font-stack))
-// ==========================================
-// 1. HTML 注入与样式配置
-// ==========================================
-// #show raw.where(lang: "html"): it => it.text
-// #let html(content) = raw(content, lang: "html")
 
-// #let html(content) = raw(content, block: true, lang: "html")
 // ==========================================
 // 2. 博客布局 (修复 show-outline 参数)
 // ==========================================
@@ -39,6 +33,15 @@
 
   // --- 布局核心逻辑 ---
 
+  // 2. 放置正文 (Content Layer)
+  // 我们给正文套一个 block，强行限制它的宽度
+  // 宽度 = 100% (父容器总宽) - 240pt (留给侧边栏的空间)
+  block(
+    width: 100% - 240pt,
+    inset: (right: 2em), // 再加点内边距，防止文字紧贴侧边栏
+    doc, // <--- 正文在这里渲染，支持跨页
+  )
+
   // 1. 放置侧边栏 (Ghost Layer)
   // 使用 place 将它悬浮在父容器的右上角
   // 因为它是悬浮的，不会占用流式布局的空间，也不会被挤跑
@@ -59,13 +62,4 @@
       ],
     )
   }
-
-  // 2. 放置正文 (Content Layer)
-  // 我们给正文套一个 block，强行限制它的宽度
-  // 宽度 = 100% (父容器总宽) - 240pt (留给侧边栏的空间)
-  block(
-    width: 100% - 240pt,
-    inset: (right: 2em), // 再加点内边距，防止文字紧贴侧边栏
-    doc, // <--- 正文在这里渲染，支持跨页
-  )
 }
